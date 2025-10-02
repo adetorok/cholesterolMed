@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Screening - MED CLINICAL RESEARCH</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            min-height: 100vh;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .divider {
+            width: 100%;
+            height: 2px;
+            background: white;
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .eligibility {
+            margin-bottom: 2rem;
+        }
+
+        .eligibility h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+
+        .eligibility ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .eligibility li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .eligibility li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .benefits {
+            background: rgba(16, 185, 129, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+        }
+
+        .benefits h3 {
+            color: #10b981;
+            margin-bottom: 1rem;
+        }
+
+        .form-section {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1e3a8a;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-section h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .radio-item input[type="radio"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .referral-section {
+            background: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .referral-section h3 {
+            color: #8b5cf6;
+            margin-bottom: 1rem;
+        }
+
+        .submit-btn {
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #1e40af;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .plus-signs {
+            position: fixed;
+            color: white;
+            font-size: 2rem;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .plus-1 { top: 10%; left: 5%; }
+        .plus-2 { top: 20%; right: 8%; }
+        .plus-3 { bottom: 20%; left: 8%; }
+        .plus-4 { bottom: 10%; right: 5%; }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="plus-signs plus-1">+</div>
+    <div class="plus-signs plus-2">+</div>
+    <div class="plus-signs plus-3">+</div>
+    <div class="plus-signs plus-4">+</div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">MED CLINICAL RESEARCH, LLC</div>
+            <div class="divider"></div>
+            <h1>Health Screening</h1>
+        </div>
+
+        <div class="content">
+            <div class="info-section">
+                <div class="eligibility">
+                    <h3>Are You Eligible?</h3>
+                    <ul>
+                        <li>Are you at least 50 years old?</li>
+                        <li>Do you take cholesterol medication?</li>
+                        <li>Do you have a family history of high cholesterol, diabetes, or hypertension?</li>
+                    </ul>
+                </div>
+
+                <div class="benefits">
+                    <h3>Join Our Research Study</h3>
+                    <p>Join a research study today with a simple blood draw. You will be reimbursed for your time and travel.</p>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Get Started Today</h2>
+                <form id="interestForm" action="process_form.php" method="post">
+                    <input type="hidden" name="language" value="english">
+                    <div class="form-group">
+                        <label for="interestType">I am interested in:</label>
+                        <select id="interestType" name="interestType" required>
+                            <option value="">Select an option</option>
+                            <option value="participating">Participating in the study myself</option>
+                            <option value="referring">Referring someone else</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" min="18" max="120" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Eligibility Questions *</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="age50" name="eligibility" value="age50">
+                                <label for="age50">I am at least 50 years old</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cholesterol" name="eligibility" value="cholesterol">
+                                <label for="cholesterol">I take cholesterol medication</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="familyHistory" name="eligibility" value="familyHistory">
+                                <label for="familyHistory">I have a family history of high cholesterol, diabetes, or hypertension</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Contact Time *</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="time1" name="contactTime" value="9am-12pm" required>
+                                <label for="time1">9:00 AM - 12:00 PM</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="time2" name="contactTime" value="12pm-3pm" required>
+                                <label for="time2">12:00 PM - 3:00 PM</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="time3" name="contactTime" value="3pm-6pm" required>
+                                <label for="time3">3:00 PM - 6:00 PM</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="time4" name="contactTime" value="6pm-9pm" required>
+                                <label for="time4">6:00 PM - 9:00 PM</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="referral-section" id="referralSection" style="display: none;">
+                        <h3>Referral Information</h3>
+                        <div class="form-group">
+                            <label for="referralName">Referral's Full Name</label>
+                            <input type="text" id="referralName" name="referralName">
+                        </div>
+                        <div class="form-group">
+                            <label for="referralPhone">Referral's Phone Number</label>
+                            <input type="tel" id="referralPhone" name="referralPhone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information (Optional)</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Any additional information you'd like to share..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Interest Form</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>FOR MORE INFORMATION:</h3>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>908-798-8373</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>info@medclinicalresearch.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>40 Union Ave, Suite #206<br>Irvington NJ 07111</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show/hide referral section based on interest type
+        document.getElementById('interestType').addEventListener('change', function() {
+            const referralSection = document.getElementById('referralSection');
+            if (this.value === 'referring') {
+                referralSection.style.display = 'block';
+                document.getElementById('referralName').required = true;
+                document.getElementById('referralPhone').required = true;
+            } else {
+                referralSection.style.display = 'none';
+                document.getElementById('referralName').required = false;
+                document.getElementById('referralPhone').required = false;
+            }
+        });
+
+        // Form validation and submission
+        document.getElementById('interestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const eligibilityCheckboxes = document.querySelectorAll('input[name="eligibility"]:checked');
+            if (eligibilityCheckboxes.length === 0) {
+                alert('Please select at least one eligibility criteria.');
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+
+            // Submit form via AJAX
+            const formData = new FormData(this);
+            
+            fetch('process_form.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Thank you for your interest! We will contact you during your preferred time.');
+                    this.reset();
+                } else {
+                    alert('Error: ' + (data.message || 'Please try again.'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
