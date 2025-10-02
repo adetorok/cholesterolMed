@@ -27,11 +27,54 @@
             padding: 2rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1rem;
-            letter-spacing: 2px;
+            gap: 1rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .med {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3b82f6;
+            line-height: 1;
+        }
+
+        .crp {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #9ca3af;
+            line-height: 1;
+        }
+
+        .subtitle {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #3b82f6;
+            letter-spacing: 1px;
+            margin-top: 0.2rem;
+        }
+
+        .logo-symbol {
+            font-size: 3rem;
+            color: #3b82f6;
+            background: #3b82f6;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
         }
 
         .divider {
@@ -104,10 +147,16 @@
     <div class="plus-signs plus-3">+</div>
     <div class="plus-signs plus-4">+</div>
 
-    <div class="container">
-        <div class="logo">MED CLINICAL RESEARCH, LLC</div>
-        <div class="divider"></div>
-        <h1>Select Language / Seleccionar Idioma</h1>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-text">
+                    <span class="med">MED</span><span class="crp">CRP</span>
+                    <div class="subtitle">CLINICAL RESEARCH</div>
+                </div>
+                <div class="logo-symbol">♡</div>
+            </div>
+            <div class="divider"></div>
+            <h1>Select Language / Seleccionar Idioma</h1>
         
         <div class="language-buttons">
             <a href="english.html" class="lang-btn">English</a>
