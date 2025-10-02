@@ -301,6 +301,40 @@
         .plus-3 { bottom: 20%; left: 8%; }
         .plus-4 { bottom: 10%; right: 5%; }
 
+        .blood-draw-image {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .blood-draw-photo {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 3px solid #3b82f6;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border: 2px dashed #9ca3af;
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .medical-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .image-text {
+            font-size: 1.2rem;
+            color: #6b7280;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
             .content {
                 grid-template-columns: 1fr;
@@ -356,6 +390,14 @@
                 <div class="benefits">
                     <h3>Join Our Research Study</h3>
                     <p>Join a research study today with a simple blood draw.<br>You will be reimbursed for your time and travel.</p>
+                </div>
+
+                <div class="blood-draw-image">
+                    <img src="blood-draw-image.jpg" alt="Medical professional performing blood draw procedure" class="blood-draw-photo">
+                    <div class="image-placeholder" style="display: none;">
+                        <div class="medical-icon">🩸</div>
+                        <div class="image-text">Blood Draw Procedure</div>
+                    </div>
                 </div>
             </div>
 
