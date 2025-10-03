@@ -102,17 +102,19 @@
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            padding: 3rem 0;
+            gap: 2rem;
+            padding: 2rem 0;
             min-height: 70vh;
+            align-items: start;
         }
 
         /* Left Panel - Information */
         .info-panel {
             background: #f8fafc;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            height: fit-content;
         }
 
         .eligibility-section {
@@ -196,10 +198,11 @@
         /* Right Panel - Form */
         .form-panel {
             background: white;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border: 1px solid #e5e7eb;
+            height: fit-content;
         }
 
         .form-title {
@@ -247,8 +250,8 @@
         }
 
         .checkbox-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 0.75rem;
             margin-top: 0.5rem;
         }
@@ -265,8 +268,8 @@
         }
 
         .radio-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 0.75rem;
             margin-top: 0.5rem;
         }
