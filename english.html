@@ -391,6 +391,19 @@
         .form-group textarea.error {
             border-color: #ef4444;
         }
+
+        .form-section-divider {
+            margin: 2rem 0 1rem 0;
+            padding: 1rem 0;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .form-section-divider h3 {
+            color: #1e40af;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -502,8 +515,12 @@
                         <input type="number" id="age" name="age" min="50" max="100" required>
                     </div>
 
+                    <!-- Eligibility Questions Section -->
+                    <div class="form-section-divider">
+                        <h3>Eligibility Questions *</h3>
+                    </div>
+                    
                     <div class="form-group">
-                        <label>Eligibility Questions *</label>
                         <div class="checkbox-group">
                             <div class="checkbox-item">
                                 <input type="checkbox" id="ageCheck" name="ageCheck" required>
@@ -520,8 +537,12 @@
                         </div>
                     </div>
 
+                    <!-- Preferred Contact Time Section -->
+                    <div class="form-section-divider">
+                        <h3>Preferred Contact Time *</h3>
+                    </div>
+                    
                     <div class="form-group">
-                        <label>Preferred Contact Time *</label>
                         <div class="radio-group">
                             <div class="radio-item">
                                 <input type="radio" id="time1" name="contactTime" value="9am-12pm" required>
