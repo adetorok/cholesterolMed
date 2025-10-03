@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MED CLINICAL RESEARCH - Language Selection</title>
+    <title>Select Language - Med Clinical Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,155 +14,205 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 50%, #0f172a 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         .container {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
             text-align: center;
-            max-width: 600px;
-            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            width: 90%;
         }
 
-        .logo-container {
+        .logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
             gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .logo img {
+            height: 60px;
         }
 
         .logo-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .med {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #3b82f6;
-            line-height: 1;
-        }
-
-        .crp {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #9ca3af;
-            line-height: 1;
-        }
-
-        .subtitle {
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: #3b82f6;
-            letter-spacing: 1px;
-            margin-top: 0.2rem;
-        }
-
-        .logo-symbol {
-            font-size: 3rem;
-            color: #3b82f6;
-            background: #3b82f6;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1e40af;
         }
 
         .divider {
-            width: 100%;
-            height: 2px;
-            background: white;
-            margin: 1rem 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            font-weight: bold;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 3rem;
         }
 
         .language-buttons {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
             justify-content: center;
-            margin-top: 3rem;
         }
 
         .lang-btn {
-            background: white;
-            color: #1e3a8a;
-            border: none;
-            padding: 1.5rem 3rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            flex: 1;
+            padding: 1.5rem 2rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
             text-decoration: none;
-            display: inline-block;
+            color: #374151;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .lang-btn:hover {
-            background: #f8fafc;
+            border-color: #1e40af;
+            color: #1e40af;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.2);
         }
 
-        .plus-signs {
-            position: absolute;
+        .lang-btn.english {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
             color: white;
-            font-size: 2rem;
-            opacity: 0.3;
+            border-color: #1e40af;
         }
 
-        .plus-1 { top: 20%; left: 10%; }
-        .plus-2 { top: 30%; right: 15%; }
-        .plus-3 { bottom: 30%; left: 15%; }
-        .plus-4 { bottom: 20%; right: 10%; }
+        .lang-btn.english:hover {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
+        }
+
+        .lang-btn.spanish {
+            background: white;
+            color: #374151;
+        }
+
+        .lang-btn.spanish:hover {
+            background: #f8fafc;
+            border-color: #1e40af;
+            color: #1e40af;
+        }
+
+        .flag-icon {
+            font-size: 1.5rem;
+        }
+
+        .study-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid #1e40af;
+        }
+
+        .study-info h3 {
+            color: #1e40af;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .study-info p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
 
         @media (max-width: 768px) {
-            .language-buttons {
-                flex-direction: column;
-                align-items: center;
+            .container {
+                padding: 2rem;
+                margin: 1rem;
             }
-            
+
             h1 {
                 font-size: 2rem;
+            }
+
+            .language-buttons {
+                flex-direction: column;
+            }
+
+            .lang-btn {
+                padding: 1.25rem 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="plus-signs plus-1">+</div>
-    <div class="plus-signs plus-2">+</div>
-    <div class="plus-signs plus-3">+</div>
-    <div class="plus-signs plus-4">+</div>
-
-        <div class="container">
-            <div class="logo-container">
-                <div class="logo-text">
-                    <span class="med">MED</span><span class="crp">CRP</span>
-                    <div class="subtitle">CLINICAL RESEARCH</div>
-                </div>
-                <div class="logo-symbol">♡</div>
-            </div>
-            <div class="divider"></div>
-            <h1>Select Language / Seleccionar Idioma</h1>
+    <div class="container">
+        <div class="logo">
+            <img src="medclinic1logo-02-e1592504379857-165x55.png" alt="Med Clinical Research">
+            <div class="logo-text">MED CLINICAL RESEARCH</div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <h1>Select Language / Seleccionar Idioma</h1>
+        <p class="subtitle">Choose your preferred language to continue</p>
         
         <div class="language-buttons">
-            <a href="english.html" class="lang-btn">English</a>
-            <a href="spanish.html" class="lang-btn">Español</a>
+            <a href="english.html" class="lang-btn english">
+                <span class="flag-icon">🇺🇸</span>
+                English
+            </a>
+            <a href="spanish.html" class="lang-btn spanish">
+                <span class="flag-icon">🇪🇸</span>
+                Español
+            </a>
+        </div>
+
+        <div class="study-info">
+            <h3><i class="fas fa-heart"></i> Cholesterol Research Study</h3>
+            <p>Join our clinical research study and help advance cholesterol treatment options for better healthcare outcomes.</p>
         </div>
     </div>
 </body>
