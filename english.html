@@ -188,19 +188,32 @@
         }
 
         .form-section {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            background: white;
+            color: #333;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .form-section h2 {
+            background: linear-gradient(135deg, #0077ff, #00d4aa);
             color: white;
-            margin-bottom: 1rem;
+            margin: -2rem -2rem 2rem -2rem;
+            padding: 2rem;
             text-align: center;
-            font-size: 1.4rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        .form-subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1rem;
         }
 
         .form-group {
@@ -218,25 +231,83 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: bold;
-            color: white;
+            color: #333;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.6rem;
-            border: 2px solid #d1d5db;
-            border-radius: 6px;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
             font-size: 0.95rem;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.2s ease-in-out;
+            background: white;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #3b82f6;
+            border-color: #0077ff;
+            box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.2);
+        }
+
+        .form-group input.error,
+        .form-group select.error,
+        .form-group textarea.error {
+            border-color: #ff4d4f;
+        }
+
+        .error-message {
+            color: #ff4d4f;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .stepper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .step.active .step-circle {
+            background: #0077ff;
+            color: white;
+        }
+
+        .step-line {
+            width: 60px;
+            height: 2px;
+            background: #e0e0e0;
+            margin: 0 10px;
+        }
+
+        .step.active + .step .step-line {
+            background: #0077ff;
         }
 
         .radio-group {
@@ -287,20 +358,22 @@
         }
 
         .submit-btn {
-            background: #1e3a8a;
+            background: linear-gradient(135deg, #0077ff, #00d4aa);
             color: white;
             border: none;
-            padding: 1rem 2rem;
+            padding: 0.75rem 1.5rem;
             font-size: 1.1rem;
             font-weight: bold;
-            border-radius: 8px;
+            border-radius: 2rem;
             cursor: pointer;
             width: 100%;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
         }
 
         .submit-btn:hover {
-            background: #1e40af;
+            background: linear-gradient(135deg, #0056cc, #00b894);
+            transform: scale(1.02);
         }
 
         .contact-info {
@@ -396,6 +469,20 @@
                 grid-template-columns: 1fr;
                 gap: 0;
             }
+
+            .form-section {
+                margin: 0 2rem;
+                max-width: none;
+            }
+
+            .stepper {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .step-line {
+                width: 30px;
+            }
         }
     </style>
 </head>
@@ -442,6 +529,18 @@
 
             <div class="form-section">
                 <h2>Get Started Today</h2>
+                <div class="form-subtitle">Complete our quick qualification form.</div>
+                
+                <div class="stepper">
+                    <div class="step active">
+                        <div class="step-circle">1</div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-circle">2</div>
+                    </div>
+                </div>
+                
                 <form id="interestForm" action="process_form.php" method="post">
                     <input type="hidden" name="language" value="english">
                     <div class="form-group">
