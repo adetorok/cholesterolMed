@@ -618,8 +618,13 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="age">Age *</label>
-                            <input type="number" id="age" name="age" min="50" max="100" required>
+                            <label for="age">Age Range *</label>
+                            <select id="age" name="age" required>
+                                <option value="">Select your age range</option>
+                                <option value="50-60">50-60 years old</option>
+                                <option value="61-70">61-70 years old</option>
+                                <option value="71-80">71-80 years old</option>
+                            </select>
                         </div>
                         
                         <button type="submit" class="cta-btn">See If You Qualify</button>

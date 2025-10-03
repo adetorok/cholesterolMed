@@ -618,8 +618,13 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="age">Edad *</label>
-                            <input type="number" id="age" name="age" min="50" max="100" required>
+                            <label for="age">Rango de Edad *</label>
+                            <select id="age" name="age" required>
+                                <option value="">Seleccione su rango de edad</option>
+                                <option value="50-60">50-60 años</option>
+                                <option value="61-70">61-70 años</option>
+                                <option value="71-80">71-80 años</option>
+                            </select>
                         </div>
                         
                         <button type="submit" class="cta-btn">Vea Si Califica</button>
