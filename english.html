@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #1e40af;
+            background: #f8fafc;
             color: #333;
             line-height: 1.6;
         }
@@ -29,50 +29,36 @@
         /* Header */
         .header {
             background: white;
-            padding: 2rem 0;
-            text-align: center;
-            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 1rem;
-            margin-bottom: 1rem;
         }
 
         .logo img {
-            height: 50px;
+            height: 40px;
         }
 
         .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1e40af;
-        }
-
-        .logo-symbol {
             font-size: 1.5rem;
-            color: #ef4444;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
             font-weight: 700;
             color: #1e40af;
-            margin-bottom: 0.5rem;
-        }
-
-        .header p {
-            color: #6b7280;
-            font-size: 1.1rem;
         }
 
         .language-selector {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
             display: flex;
             gap: 0.5rem;
         }
@@ -98,115 +84,63 @@
             color: #1e40af;
         }
 
-        /* Main Content */
-        .main-content {
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            padding: 2rem 0;
-            min-height: 70vh;
-            align-items: start;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Left Panel - Information */
-        .info-panel {
-            background: #f8fafc;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            height: fit-content;
-        }
-
-        .eligibility-section {
-            margin-bottom: 2rem;
-        }
-
-        .eligibility-title {
-            font-size: 1.5rem;
+        .hero-text h1 {
+            font-size: 3rem;
             font-weight: 700;
-            color: #f59e0b;
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
-        .eligibility-list {
-            list-style: none;
-        }
-
-        .eligibility-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-            color: #374151;
-        }
-
-        .check-icon {
-            width: 20px;
-            height: 20px;
-            background: #10b981;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.7rem;
-            flex-shrink: 0;
-        }
-
-        .benefits-section {
-            background: #10b981;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-            border: 2px solid #059669;
-        }
-
-        .benefits-title {
+        .hero-text .subtitle {
             font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
         }
 
-        .benefits-text {
-            font-size: 1rem;
-            line-height: 1.5;
+        .hero-text .description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
         }
 
-        .study-image {
-            text-align: center;
-        }
-
-        .study-image img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .image-caption {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            color: #6b7280;
-            font-style: italic;
-        }
-
-        /* Right Panel - Form */
-        .form-panel {
+        .hero-form {
             background: white;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e5e7eb;
-            height: fit-content;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            color: #333;
         }
 
         .form-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #1f2937;
             margin-bottom: 1.5rem;
@@ -230,7 +164,7 @@
             width: 100%;
             padding: 0.75rem;
             border: 2px solid #e5e7eb;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 1rem;
             transition: border-color 0.3s ease;
             background: white;
@@ -249,45 +183,9 @@
             gap: 1rem;
         }
 
-        .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .checkbox-item input[type="checkbox"] {
-            width: auto;
-            margin: 0;
-        }
-
-        .radio-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .radio-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .radio-item input[type="radio"] {
-            width: auto;
-            margin: 0;
-        }
-
-        .submit-btn {
+        .cta-btn {
             width: 100%;
-            background: #1e40af;
+            background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
             color: white;
             padding: 1rem 2rem;
             border: none;
@@ -295,79 +193,287 @@
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1rem;
         }
 
-        .submit-btn:hover {
-            background: #1e3a8a;
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(30, 64, 175, 0.3);
         }
 
-        .submit-btn:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
-        /* Footer */
-        .footer {
-            background: #1f2937;
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .trust-badge i {
+            color: #10b981;
+        }
+
+        /* What's Included Section */
+        .whats-included {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 3rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: #f8fafc;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
             color: white;
-            padding: 2rem 0;
+            font-size: 1.5rem;
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-description {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* Eligibility Section */
+        .eligibility {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+
+        .eligibility-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .eligibility-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .eligibility-text p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        .eligibility-list {
+            list-style: none;
+        }
+
+        .eligibility-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #374151;
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .study-image {
             text-align: center;
         }
 
-        .footer-title {
-            font-size: 1.2rem;
+        .study-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #f8fafc;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1f2937;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e5e7eb;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #6b7280;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background: #1f2937;
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
         .contact-item i {
             color: #ef4444;
+            width: 20px;
+        }
+
+        .sticky-apply {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .sticky-apply h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .sticky-apply .cta-btn {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .main-content {
+            .hero-content,
+            .eligibility-content,
+            .contact-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .language-selector {
-                position: static;
-                justify-content: center;
-                margin-bottom: 1rem;
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
             }
 
-            .checkbox-group,
-            .radio-group {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .header h1 {
+            .hero-text h1 {
                 font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -394,48 +500,119 @@
         .form-group textarea.error {
             border-color: #ef4444;
         }
-
-        .form-section-divider {
-            margin: 2rem 0 1rem 0;
-            padding: 1rem 0;
-            border-top: 2px solid #e5e7eb;
-        }
-
-        .form-section-divider h3 {
-            color: #1e40af;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0;
-        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="language-selector">
-                <a href="english.html" class="lang-btn active">EN</a>
-                <a href="spanish.html" class="lang-btn">ES</a>
+            <div class="header-content">
+                <div class="logo">
+                    <img src="medclinic1logo-02-e1592504379857-165x55.png" alt="Med Clinical Research">
+                    <div class="logo-text">MED CLINICAL RESEARCH</div>
+                </div>
+                <div class="language-selector">
+                    <a href="english.html" class="lang-btn active">EN</a>
+                    <a href="spanish.html" class="lang-btn">ES</a>
+                </div>
             </div>
-            
-            <div class="logo">
-                <img src="medclinic1logo-02-e1592504379857-165x55.png" alt="Med Clinical Research">
-                <div class="logo-text">MED CLINICAL RESEARCH</div>
-                <div class="logo-symbol">♡</div>
-            </div>
-            
-            <h1>Cholesterol Study</h1>
-            <p>Help us advance cholesterol research and treatment options</p>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="main-content">
-            <!-- Left Panel - Information -->
-            <div class="info-panel">
-                <div class="eligibility-section">
-                    <h2 class="eligibility-title">Are You Eligible?</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Is Your Cholesterol Under Control?</h1>
+                    <p class="subtitle">Join our research study and help advance cholesterol treatment</p>
+                    <p class="description">Adults 50+ taking cholesterol medication may qualify for our clinical study. Get study-related exams, procedures, and medications at no cost, plus compensation for your time and travel.</p>
+                </div>
+                <div class="hero-form">
+                    <h2 class="form-title">See If You Qualify</h2>
+                    <form id="interestForm" action="process_form.php" method="post">
+                        <input type="hidden" name="language" value="english">
+                        
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age">Age *</label>
+                            <input type="number" id="age" name="age" min="50" max="100" required>
+                        </div>
+                        
+                        <button type="submit" class="cta-btn">See If You Qualify</button>
+                    </form>
+                    
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>HIPAA Compliant</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>Privacy Protected</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="whats-included">
+        <div class="container">
+            <h2 class="section-title">What's Included</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="benefit-title">Study-Related Exams</h3>
+                    <p class="benefit-description">All study-related exams, procedures, and medications at no cost to you</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="benefit-title">Compensation</h3>
+                    <p class="benefit-description">Reimbursement for your time and travel expenses</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="benefit-title">Specialized Care</h3>
+                    <p class="benefit-description">Specialized medical care throughout the study duration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section class="eligibility">
+        <div class="container">
+            <div class="eligibility-content">
+                <div class="eligibility-text">
+                    <h2>Are You Eligible?</h2>
+                    <p>Check if you meet our study requirements:</p>
                     <ul class="eligibility-list">
                         <li class="eligibility-item">
                             <div class="check-icon">
@@ -457,185 +634,128 @@
                         </li>
                     </ul>
                 </div>
-
-                <div class="benefits-section">
-                    <h3 class="benefits-title">
-                        <i class="fas fa-heart"></i>
-                        Join Our Research Study
-                    </h3>
-                    <p class="benefits-text">
-                        🩸 Join a research study today with a simple blood draw.<br>
-                        💰 You will be reimbursed for your time and travel.
-                    </p>
-                </div>
-
                 <div class="study-image">
                     <img src="Amgen Study Flyer_50 yrs.png" alt="Blood Draw Procedure">
-                    <div class="image-caption">Simple blood draw procedure</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Right Panel - Form -->
-            <div class="form-panel">
-                <h2 class="form-title">Get Started Today</h2>
-                
-                <form id="interestForm" action="process_form.php" method="post">
-                    <input type="hidden" name="language" value="english">
-                    
-                    <div class="form-group">
-                        <label for="interestType">I am interested in:</label>
-                        <select id="interestType" name="interestType" required>
-                            <option value="">Select an option</option>
-                            <option value="participating">Participating in the study myself</option>
-                            <option value="referring">Referring someone else</option>
-                        </select>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="age">Age *</label>
-                        <input type="number" id="age" name="age" min="50" max="100" required>
-                    </div>
-
-                    <!-- Eligibility Questions Section -->
-                    <div class="form-section-divider">
-                        <h3>Eligibility Questions *</h3>
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="ageCheck" name="ageCheck" required>
-                                <label for="ageCheck">I am 50 years or older</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="cholesterolCheck" name="cholesterolCheck" required>
-                                <label for="cholesterolCheck">I take cholesterol medication</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="familyCheck" name="familyCheck" required>
-                                <label for="familyCheck">I have family history of high cholesterol, diabetes, or hypertension</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Preferred Contact Time Section -->
-                    <div class="form-section-divider">
-                        <h3>Preferred Contact Time *</h3>
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="radio-group">
-                            <div class="radio-item">
-                                <input type="radio" id="time1" name="contactTime" value="9am-12pm" required>
-                                <label for="time1">9:00 AM - 12:00 PM</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" id="time2" name="contactTime" value="12pm-3pm" required>
-                                <label for="time2">12:00 PM - 3:00 PM</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" id="time3" name="contactTime" value="3pm-6pm" required>
-                                <label for="time3">3:00 PM - 6:00 PM</label>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" id="time4" name="contactTime" value="6pm-9pm" required>
-                                <label for="time4">6:00 PM - 9:00 PM</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="referralSection" style="display: none;">
-                        <div class="form-group">
-                            <label for="referralName">Referral Name *</label>
-                            <input type="text" id="referralName" name="referralName">
-                        </div>
-                        <div class="form-group">
-                            <label for="referralPhone">Referral Phone *</label>
-                            <input type="tel" id="referralPhone" name="referralPhone">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="additionalInfo">Additional Information (Optional)</label>
-                        <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any questions or additional information you'd like to share..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        Submit Interest Form
-                    </button>
-                </form>
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is this study safe for participants?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, all our studies are conducted under strict medical supervision and follow FDA guidelines. Your safety is our top priority.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do participants get paid for participating?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, participants receive compensation for their time and travel expenses. The amount varies depending on the study requirements.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What happens during study visits?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Study visits typically include health assessments, blood draws, and monitoring of your condition. All procedures are explained in detail before participation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I withdraw from the study?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can withdraw from the study at any time for any reason. Your decision will not affect your future medical care.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Contact us today to learn more about participating in our cholesterol research study.</p>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@medclinicalresearch.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Medical Center Dr, Research City, RC 12345</span>
+                    </div>
+                </div>
+                <div class="sticky-apply">
+                    <h3>Apply Now</h3>
+                    <p>Fill out the form above to see if you qualify for our study.</p>
+                    <button class="cta-btn" onclick="document.querySelector('.hero').scrollIntoView({behavior: 'smooth'})">
+                        See If You Qualify
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <h3 class="footer-title">FOR MORE INFORMATION:</h3>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>(555) 123-4567</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <span>info@medclinicalresearch.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>123 Medical Center Dr, Research City, RC 12345</span>
-                </div>
-            </div>
+            <p>&copy; 2024 Med Clinical Research, LLC. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Show/hide referral section based on interest type
-        document.getElementById('interestType').addEventListener('change', function() {
-            const referralSection = document.getElementById('referralSection');
-            if (this.value === 'referring') {
-                referralSection.style.display = 'block';
-                document.getElementById('referralName').required = true;
-                document.getElementById('referralPhone').required = true;
-            } else {
-                referralSection.style.display = 'none';
-                document.getElementById('referralName').required = false;
-                document.getElementById('referralPhone').required = false;
-            }
-        });
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.faq-question i').forEach(item => {
+                if (item !== icon) {
+                    item.style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
 
         // Form submission with AJAX
         document.getElementById('interestForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const formData = new FormData(this);
-            const submitBtn = this.querySelector('.submit-btn');
+            const submitBtn = this.querySelector('.cta-btn');
             const originalText = submitBtn.innerHTML;
             
             // Show loading state
-            submitBtn.innerHTML = 'Submitting...';
+            submitBtn.innerHTML = 'Checking Eligibility...';
             submitBtn.disabled = true;
             
             fetch('process_form.php', {
@@ -649,12 +769,11 @@
                     const successMsg = document.createElement('div');
                     successMsg.className = 'success-message';
                     successMsg.style.display = 'block';
-                    successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! We will contact you soon.';
+                    successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! We will contact you soon to discuss your eligibility.';
                     this.insertBefore(successMsg, this.firstChild);
                     
                     // Reset form
                     this.reset();
-                    document.getElementById('referralSection').style.display = 'none';
                     
                     // Scroll to success message
                     successMsg.scrollIntoView({behavior: 'smooth'});
